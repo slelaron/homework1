@@ -4,6 +4,7 @@ import android.util.Pair;
 import android.widget.TextView;
 
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -207,6 +208,11 @@ public class Parser {
 	public void toRestoreInitialState(ArrayList <Integer> tmp, BigDecimal lastResult) {
 		exp = tmp;
 		result = lastResult;
+		Print();
+	}
+
+	public void toRestoreExp(ArrayList <Integer> tmp) {
+		exp = tmp;
 		Print();
 	}
 
