@@ -124,10 +124,11 @@ public class Parser {
 	}
 
 	private void Print() {
-		checkOnCorrectness();
 		if (exp.size() == 1) {
 			text.setText("");
 		} else {
+			if (!checkOnCorrectness())
+				return;
 			text.setText(result.toPlainString());
 		}
 	}
