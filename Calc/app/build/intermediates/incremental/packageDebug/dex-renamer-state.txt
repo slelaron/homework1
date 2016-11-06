@@ -1,0 +1,7 @@
+#Mon Nov 07 00:34:45 MSK 2016
+base.0=/home/nikita/homework1/Calc/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_90f7efd283763204514452b9b445a5ff0f8a6c5e
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/home/nikita/homework1/Calc/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e63b42a754af5de3be059bce8b07871100bb7ded/classes.dex
+base.1=/home/nikita/homework1/Calc/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e63b42a754af5de3be059bce8b07871100bb7ded
+file.0=/home/nikita/homework1/Calc/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_90f7efd283763204514452b9b445a5ff0f8a6c5e/classes.dex
