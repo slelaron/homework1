@@ -30,8 +30,11 @@ public class CalculatorActivity extends Activity {
         super.onRestoreInstanceState(savedState);
         TextView expressionText = (TextView)findViewById(R.id.ExpressionText);
         expressionText.setText(savedState.getString("Expression text"));
-        if (expressionText.length() != 0) {
+        if (savedState.getBoolean("Created")) {
             parser.toRestoreInitialState(savedState.getIntegerArrayList("Coded expression"), new BigDecimal(savedState.getString("Last result")));
+        }
+        else {
+            parser.toRestoreExp(savedState.getIntegerArrayList("Coded expression"));
         }
         strBuilder.append(savedState.getString("Expression text"));
     }
@@ -42,8 +45,12 @@ public class CalculatorActivity extends Activity {
         saveInstanceState.putString("Expression text", expressionText.getText().toString());
         Pair<ArrayList<Integer>, BigDecimal> tmp = parser.toSaveExp();
         saveInstanceState.putIntegerArrayList("Coded expression", tmp.first);
-        if (expressionText.getText().toString().length() != 0) {
+        if (tmp.second != null) {
+            saveInstanceState.putBoolean("Created", true);
             saveInstanceState.putString("Last result", tmp.second.toString());
+        }
+        else {
+            saveInstanceState.putBoolean("Created", false);
         }
         super.onSaveInstanceState(saveInstanceState);
     }
@@ -161,4 +168,5 @@ public class CalculatorActivity extends Activity {
         parser.clearLast();
     }
 }
+
 

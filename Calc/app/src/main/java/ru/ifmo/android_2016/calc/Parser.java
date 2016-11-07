@@ -4,6 +4,7 @@ import android.util.Pair;
 import android.widget.TextView;
 
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -124,10 +125,11 @@ public class Parser {
 	}
 
 	private void Print() {
-		checkOnCorrectness();
 		if (exp.size() == 1) {
 			text.setText("");
 		} else {
+			if (!checkOnCorrectness())
+				return;
 			text.setText(result.toPlainString());
 		}
 	}
@@ -209,7 +211,13 @@ public class Parser {
 		Print();
 	}
 
+	public void toRestoreExp(ArrayList <Integer> tmp) {
+		exp = tmp;
+		Print();
+	}
+
 	public BigDecimal calculate() {
 		return result;
 	}
 }
+
